@@ -1,6 +1,5 @@
 package com.example.demo_testing.forum.tdd;
 
-import com.example.demo_testing.forum.ForumUser;
 import com.example.testing.forum.ForumComment;
 import com.example.testing.forum.ForumPost;
 import org.junit.jupiter.api.*;
@@ -29,7 +28,7 @@ public class ForumTestSuite {
     @Test
     void testAddPost() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost.ForumUser forumUser = new ForumPost.ForumUser("mrsmith", "John Smith");
 
         //When
         forumUser.addPost("Hello everyone, this is first contribution here!", "mrsmith");
@@ -41,7 +40,7 @@ public class ForumTestSuite {
     @Test
     void testAddComment() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost.ForumUser forumUser = new ForumPost.ForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone!" +
                 "this is my first contribution here!", "mrsmith");
         //When
@@ -54,7 +53,7 @@ public class ForumTestSuite {
     @Test
     void testPost() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost.ForumUser forumUser = new ForumPost.ForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone! " +
                 "this is my first contribution here!", "mrsmith");
         forumUser.addPost(thePost.getPostBody(), thePost.getAuthor());
@@ -70,7 +69,7 @@ public class ForumTestSuite {
     @Test
     void testGetComment() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost.ForumUser forumUser = new ForumPost.ForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         ForumComment theComment = new ForumComment(thePost, "Thank you for all good words!", "mrsmith");
@@ -86,7 +85,7 @@ public class ForumTestSuite {
     @Test
     void testRemovePostNotExisting() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost.ForumUser forumUser = new ForumPost.ForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
 
@@ -100,7 +99,7 @@ public class ForumTestSuite {
     @Test
     void testRemoveCommentNotExisting() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost.ForumUser forumUser = new ForumPost.ForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         ForumComment theComment = new ForumComment(thePost, "Thank you for all good words!", "mrsmith");
@@ -115,7 +114,7 @@ public class ForumTestSuite {
     @Test
     void testRemovePost() {
         //Give
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost.ForumUser forumUser = new ForumPost.ForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyonee, " +
                 "this is my first contribution here!", "mrsmith");
         forumUser.addPost(thePost.getPostBody(), thePost.getAuthor());
@@ -130,7 +129,7 @@ public class ForumTestSuite {
 
     @Test
     void testRemoveComment() {
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost.ForumUser forumUser = new ForumPost.ForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone!, " +
                 "this is my first contribution here!", ",mrsmith");
         ForumComment theComment = new ForumComment(thePost, "Thank you for all good words!", "mrsmith");
