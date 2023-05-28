@@ -1,8 +1,6 @@
 package com.example.bootcampspring;
 
-import com.example.bootcampspring.shape.Circle;
-import com.example.bootcampspring.shape.Shape;
-import com.example.bootcampspring.shape.Triangle;
+import com.example.bootcampspring.shape.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +14,7 @@ class BootcampSpringApplicationTests {
     void testCircleLoadedIntoContainer() {
         //given
         ApplicationContext context = new AnnotationConfigApplicationContext("com/example/bootcampspring");
-        Shape shape = context.getBean(Circle.class);
+        Shape shape = (Shape) context.getBean("circle");
 
         //when
         String name = shape.getShapeName();
@@ -29,7 +27,7 @@ class BootcampSpringApplicationTests {
     void testTriangleLoadedIntoContainer() {
         //given
         ApplicationContext context = new AnnotationConfigApplicationContext("com/example/bootcampspring");
-        Shape shape = context.getBean(Triangle.class);
+        Shape shape = (Shape) context.getBean("triangle");
 
         //when
         String name = shape.getShapeName();
@@ -37,6 +35,33 @@ class BootcampSpringApplicationTests {
         //then
         Assertions.assertEquals("This is a triangle", name);
     }
+
+    @Test
+    void testSquareLoadedIntoContainer() {
+        //given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com/example/bootcampspring/shape");
+        Shape bean = (Shape) context.getBean("createSquare");
+
+        //when
+        String name = bean.getShapeName();
+
+        //then
+        Assertions.assertEquals("This is a square", name);
+    }
+
+    @Test
+    void testShapeLoadedIntoContainer() {
+        //given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com/example/bootcampspring/shape");
+        Shape shape = (Shape) context.getBean("chosenShape");
+
+        //when
+        String name = shape.getShapeName();
+
+        //then
+        System.out.println("Chosen shape says: " + name);
+    }
+
 
     @Test
     void contextLoads() {
