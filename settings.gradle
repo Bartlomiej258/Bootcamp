@@ -3,3 +3,5 @@ include ':demo.testing'
 include 'kurs-good-patterns'
 include'bootcamp-spring-intro'
 include 'bootcamp-spring'
+include 'bootcamp-patterns'
+
