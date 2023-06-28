@@ -1,7 +1,5 @@
 package bootcamp.patterns.singleton;
 
-import bootcamp.patterns.enums.hotel.Season;
-
 public enum SettingsFileEngine {
 
     INSTANCE;

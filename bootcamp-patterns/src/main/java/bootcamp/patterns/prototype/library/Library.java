@@ -1,7 +1,6 @@
 package bootcamp.patterns.prototype.library;
 
 import bootcamp.patterns.prototype.Prototype;
-import bootcamp.patterns.prototype.TaskList;
 
 import java.util.HashSet;
 import java.util.Set;
