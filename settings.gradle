@@ -4,4 +4,7 @@ include 'kurs-good-patterns'
 include'bootcamp-spring-intro'
 include 'bootcamp-spring'
 include 'bootcamp-patterns'
+include 'bootcamp-jdbc'
+include 'bootcamp-course'
+include 'bootcamp-hibernate'
 
