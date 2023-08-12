@@ -1,6 +1,6 @@
-package com.example.bootcamphibernate.task.dao;
+package com.example.bootcamphibernate.manytomany.dao;
 
-import com.example.bootcamphibernate.task.Task;
+import com.example.bootcamphibernate.manytomany.Company;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -10,10 +10,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface TaskDao extends CrudRepository<Task, Integer> {
+public interface CompanyDao extends CrudRepository<Company, Integer> {
 
-    List<Task> findByDuration(int duration);
-
-    @Query
-    List<Task> retrieveLongTasks();
+    Company findByName(String name);
 }

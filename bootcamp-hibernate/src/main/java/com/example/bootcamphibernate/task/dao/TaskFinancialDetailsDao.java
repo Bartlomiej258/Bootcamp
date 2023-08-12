@@ -1,7 +1,6 @@
 package com.example.bootcamphibernate.task.dao;
 
-import com.example.bootcamphibernate.task.Task;
-import org.springframework.data.jpa.repository.Query;
+import com.example.bootcamphibernate.task.TaskFinancialDetails;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,10 +9,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface TaskDao extends CrudRepository<Task, Integer> {
+public interface TaskFinancialDetailsDao extends CrudRepository<TaskFinancialDetails, Integer> {
 
-    List<Task> findByDuration(int duration);
-
-    @Query
-    List<Task> retrieveLongTasks();
+    List<TaskFinancialDetails> findByPaid(boolean paid);
 }

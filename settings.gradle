@@ -7,4 +7,5 @@ include 'bootcamp-patterns'
 include 'bootcamp-jdbc'
 include 'bootcamp-course'
 include 'bootcamp-hibernate'
+include 'bootcamp-patterns2'
 
